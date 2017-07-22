@@ -1,7 +1,7 @@
 <template>
   <el-col :span="12" :push="6">
     <el-row class="row-bg">
-      <el-button type="primary" @click="handleSaveButtonClick">Save Contact</el-button>
+      <el-button type="primary" disabled="isSaveButtonDisabled" @click="handleSaveButtonClick">Save Contact</el-button>
       {{contact}}
     </el-row>
     <el-row>
@@ -15,7 +15,9 @@
         <el-tab-pane label="Emails" name="email">
           <email-tab :emails="contact.emails"></email-tab>
         </el-tab-pane>
-        <el-tab-pane label="Social" name="social"></el-tab-pane>
+        <el-tab-pane label="Social" name="social">
+          <social-tab :social="contact.social"></social-tab>
+        </el-tab-pane>
       </el-tabs>
     </el-row>
   </el-col>
@@ -25,25 +27,41 @@
   import BasicTab from './BasicTab'
   import PhoneTab from './PhoneTab'
   import EmailTab from './EmailTab'
+  import SocialTab from './SocialTab'
 
   export default {
     name: 'new-contact-form',
-    components: {BasicTab, PhoneTab, EmailTab},
+    components: {BasicTab, PhoneTab, EmailTab, SocialTab},
     data () {
       return {
         contact: {
           basic: {
             firstName: '',
-            lastName: ''
+            lastName: '',
+            groups: [],
+            relation: 'Eu mesmo',
+            age: 32
           },
           phones: [],
-          emails: []
+          emails: [],
+          social: {
+            facebook: '',
+            twitter: '',
+            instagram: '',
+            googlePlus: '',
+            github: ''
+          }
         }
       }
     },
     methods: {
       handleSaveButtonClick: function () {
         alert(this.contact)
+      }
+    },
+    computed: {
+      isSaveButtonDisabled: function () {
+        return !!this.contact.firstName
       }
     }
   }

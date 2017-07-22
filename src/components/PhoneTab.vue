@@ -21,11 +21,12 @@
 
 <script>
   export default {
+    name: 'phone-tab',
     props: {
       phones: {
-        type: Object,
+        type: Array,
         default: function () {
-          return {}
+          return []
         }
       }
     },

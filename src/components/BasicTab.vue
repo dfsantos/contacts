@@ -21,7 +21,7 @@
         <el-input type="text" title="Second name" v-model.lazy.trim="contactBasicData.lastName"></el-input>
       </el-form-item>
       <el-form-item label="Groups">
-        <el-select placeholder="Choose or create new" v-model.lazy.trim="selectedGroup" multiple filterable
+        <el-select placeholder="Choose or create new" v-model.lazy.trim="contactBasicData.groups" multiple filterable
                    allow-create>
           <el-option v-for="group in vm.groups" :key="group.key" :label="group.label" :value="group.value"></el-option>
         </el-select>
@@ -40,8 +40,9 @@
           return {
             firstName: '',
             lastName: '',
-            relation: 'Eu mesmo',
-            age: 32
+            groups: [],
+            relation: '',
+            age: null
           }
         }
       }

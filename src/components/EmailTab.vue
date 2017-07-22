@@ -21,11 +21,12 @@
 
 <script>
   export default {
+    name: 'email-tab',
     props: {
       emails: {
-        type: Object,
+        type: Array,
         default: function () {
-          return {}
+          return []
         }
       }
     },
