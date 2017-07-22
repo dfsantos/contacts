@@ -1,7 +1,7 @@
 <template>
   <el-col :xs="24" :sm="24" :md="24" :lg="24">
     <el-row class="row-bg">
-      <el-button type="primary" @click="handleSaveButtonClick">Save Contact</el-button>
+      <el-button type="primary">Save Contact</el-button>
     </el-row>
     <el-row>
       <el-tabs value="basic">
@@ -28,36 +28,12 @@
   import EmailTab from './EmailTab'
   import SocialTab from './SocialTab'
 
+  import { mapState } from 'vuex'
+
   export default {
     name: 'new-contact-form',
     components: {BasicTab, PhoneTab, EmailTab, SocialTab},
-    data () {
-      return {
-        contact: {
-          basic: {
-            firstName: '',
-            lastName: '',
-            groups: [],
-            relation: 'Eu mesmo',
-            age: 32
-          },
-          phones: [],
-          emails: [],
-          social: {
-            facebook: '',
-            twitter: '',
-            instagram: '',
-            googlePlus: '',
-            github: ''
-          }
-        }
-      }
-    },
-    methods: {
-      handleSaveButtonClick: function () {
-        alert(this.contact)
-      }
-    }
+    computed: mapState(['contact'])
   }
 </script>
 
