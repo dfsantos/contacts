@@ -1,6 +1,6 @@
 <template>
-  <el-form label-width="120px">
-    <el-form-item label="Email">
+  <el-form>
+    <el-form-item>
       <el-col :span="15">
         <el-input id="email" type="tel" placeholder="Insert an email address" title="New email address"
                   v-model.lazy.trim="vm.newEmailAddressInput"></el-input>

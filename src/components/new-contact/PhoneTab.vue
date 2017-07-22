@@ -1,6 +1,6 @@
 <template>
-  <el-form label-width="120px">
-    <el-form-item label="Phone">
+  <el-form>
+    <el-form-item>
       <el-col :span="15">
         <el-input id="phone" type="tel" placeholder="Insert a phone number" title="New phone number"
                   v-model.lazy.trim="vm.newPhoneNumberInput"></el-input>

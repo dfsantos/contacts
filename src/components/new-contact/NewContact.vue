@@ -1,8 +1,7 @@
 <template>
-  <el-col :span="12" :push="6">
+  <el-col :xs="24" :sm="24" :md="24" :lg="24">
     <el-row class="row-bg">
-      <el-button type="primary" disabled="isSaveButtonDisabled" @click="handleSaveButtonClick">Save Contact</el-button>
-      {{contact}}
+      <el-button type="primary" @click="handleSaveButtonClick">Save Contact</el-button>
     </el-row>
     <el-row>
       <el-tabs value="basic">
@@ -57,11 +56,6 @@
     methods: {
       handleSaveButtonClick: function () {
         alert(this.contact)
-      }
-    },
-    computed: {
-      isSaveButtonDisabled: function () {
-        return !!this.contact.firstName
       }
     }
   }
