@@ -1,7 +1,16 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+  <el-col>
+    <div id="app">
+      <el-row class="row-bg">
+        <el-menu mode="horizontal" :router="true">
+          <el-menu-item index="new-contact">New Contact</el-menu-item>
+        </el-menu>
+      </el-row>
+      <el-row>
+        <router-view></router-view>
+      </el-row>
+    </div>
+  </el-col>
 </template>
 
 <script>
@@ -17,6 +26,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+  }
+
+  .row-bg {
+    margin-bottom: 10px;
   }
 </style>
