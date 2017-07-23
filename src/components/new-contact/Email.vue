@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    name: 'email-tab',
+    name: 'email',
     props: {
       emails: {
         type: Array,

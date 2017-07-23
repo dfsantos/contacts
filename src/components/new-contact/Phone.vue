@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    name: 'phone-tab',
+    name: 'phone',
     props: {
       phones: {
         type: Array,

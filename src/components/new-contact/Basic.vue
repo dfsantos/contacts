@@ -32,7 +32,7 @@
 
 <script>
   export default {
-    name: 'basic-tab',
+    name: 'basic',
     props: {
       basicData: {
         type: Object,

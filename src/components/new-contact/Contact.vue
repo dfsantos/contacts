@@ -6,16 +6,16 @@
     <el-row>
       <el-tabs value="basic">
         <el-tab-pane label="Basic" name="basic">
-          <basic-tab :basic-data="contact.basic"></basic-tab>
+          <basic :basic-data="contact.basic"></basic>
         </el-tab-pane>
         <el-tab-pane label="Phones" name="phone">
-          <phone-tab :phones="contact.phones"></phone-tab>
+          <phone :phones="contact.phones"></phone>
         </el-tab-pane>
         <el-tab-pane label="Emails" name="email">
-          <email-tab :emails="contact.emails"></email-tab>
+          <email :emails="contact.emails"></email>
         </el-tab-pane>
         <el-tab-pane label="Social" name="social">
-          <social-tab :social="contact.social"></social-tab>
+          <social :social="contact.social"></social>
         </el-tab-pane>
       </el-tabs>
     </el-row>
@@ -23,16 +23,16 @@
 </template>
 
 <script>
-  import BasicTab from './BasicTab'
-  import PhoneTab from './PhoneTab'
-  import EmailTab from './EmailTab'
-  import SocialTab from './SocialTab'
+  import Basic from './Basic'
+  import Phone from './Phone'
+  import Email from './Email'
+  import Social from './Social'
 
   import { mapState } from 'vuex'
 
   export default {
     name: 'new-contact-form',
-    components: {BasicTab, PhoneTab, EmailTab, SocialTab},
+    components: {Basic, Phone, Email, Social},
     computed: mapState(['contact'])
   }
 </script>

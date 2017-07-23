@@ -22,7 +22,7 @@
 
 <script>
   export default {
-    name: 'social-tab',
+    name: 'social',
     props: {
       social: {
         type: Object,
