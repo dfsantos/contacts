@@ -1,3 +1,7 @@
+[![codebeat badge](https://codebeat.co/badges/7b86b7d6-bf89-4f61-a53f-f21296940a9b)](https://codebeat.co/projects/github-com-dfsantos-contacts-master)
+
+
+
 # contacts
 
 > A Vue.js project
