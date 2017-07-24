@@ -6,10 +6,18 @@ const state = {
 }
 
 const getters = {
-  allContacts: state => state.all
+  allContacts: state => state.all,
+  getById: (state, getters) => (id) => _.find(state.all, contact => contact.id === parseInt(id))
 }
 
 const mutations = {
+  [types.SAVE_CONTACT] (state, contact) {
+    if (!contact.id) {
+      mutations[types.CREATE_CONTACT](state, contact)
+    } else {
+      mutations[types.UPDATE_CONTACT](state, contact)
+    }
+  },
   [types.CREATE_CONTACT] (state, contact) {
     contact.id = state.all.length + 1
     state.all.push(contact)

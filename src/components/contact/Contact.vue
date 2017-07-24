@@ -56,7 +56,7 @@
         type: Object,
         default: function () {
           return {
-            id: null,
+            id: this.$route.params.id,
             basic: {
               firstName: '',
               lastName: '',
@@ -79,21 +79,25 @@
     },
     computed: {
       localContact () {
-        return this.contact
+        if (!this.contact.id) {
+          return this.contact
+        } else {
+          return this.$store.getters.getById(this.contact.id)
+        }
       },
       fullname () {
-        return this.contact.basic.firstName + ' ' + this.contact.basic.lastName
+        return this.localContact.basic.firstName + ' ' + this.localContact.basic.lastName
       },
       relation () {
-        return this.contact.basic.relation
+        return this.localContact.basic.relation
       },
       age () {
-        return this.contact.basic.age
+        return this.localContact.basic.age
       }
     },
     methods: {
       handleSaveButtonClick: function () {
-        this.$store.commit(mutations.CREATE_CONTACT, this.localContact)
+        this.$store.commit(mutations.SAVE_CONTACT, this.localContact)
       }
     }
   }

@@ -13,13 +13,13 @@ export default new Router({
       component: Contacts
     },
     {
-      path: '/contact',
-      name: 'Contact',
+      path: '/contact/create',
+      name: 'CreateContact',
       component: Contact
     },
     {
-      path: '/new-contact',
-      name: 'NewContact',
+      path: '/contact/:id',
+      name: 'EditContact',
       component: Contact
     }
   ]
