@@ -1,19 +1,6 @@
 <template>
   <el-form label-width="120px" label-position="left">
     <el-row class="row-bg">
-      <el-col :span="15" align="start">
-        <el-row class="row-bg">
-          <span class="main-title">{{fullname}}</span>
-        </el-row>
-        <el-row class="row-bg">
-          <span class="small-title">{{contactBasicData.relation}}</span>
-        </el-row>
-        <el-row class="row-bg">
-          <span class="small-title">{{contactBasicData.age}}</span>
-        </el-row>
-      </el-col>
-    </el-row>
-    <el-row class="row-bg">
       <el-form-item label="First name">
         <el-input type="text" title="First name" v-model.lazy.trim="contactBasicData.firstName"></el-input>
       </el-form-item>
@@ -60,11 +47,6 @@
           ],
           selectedGroup: ''
         }
-      }
-    },
-    computed: {
-      fullname: function () {
-        return this.contactBasicData.firstName + ' ' + this.contactBasicData.lastName
       }
     }
   }

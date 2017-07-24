@@ -3,7 +3,8 @@
     <div id="app">
       <el-row class="row-bg">
         <el-menu mode="horizontal" :router="true">
-          <el-menu-item index="new-contact">New Contact</el-menu-item>
+          <el-menu-item index="/">Contacts</el-menu-item>
+          <el-menu-item index="/new-contact">New Contact</el-menu-item>
         </el-menu>
       </el-row>
       <el-row>
